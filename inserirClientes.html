@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Mecânica Gerson</title>
+</script>
+</head>
+<body onload="popularEstados()">
+	<div id="page">
+		<div id="principal">
+			<img src="imagens/banner.jpg" id="banner">
+			<a href="index.html">
+				<img src="imagens/logo.png" id="logo">
+			</a>
+		</div>
+
+		<div id="menu">
+			<ul>
+				<li><a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a></li>
+				<li><a href="clientes.html"><i class="fa fa-fw fa-user"></i>Clientes</a></li>
+			</ul>
+		</div>
+
+		<div id="content">
+			<h1 class="title">Cadastro de Clientes</h1>
+			<hr>
+
+			<form id="clienteForm" action="processamento.html">
+				<div id="erros">
+
+				</div>
+				
+				<label for="nome">Nome</label>
+			 	<input type="text" name="nome" id="nome" maxlength="100" required> <br><br>
+
+				<label  for="CPF">CPF</label>
+			 	<input type="text" name="CPF" id="cpf" maxlength="11" onkeypress="return onlyNumberKey(event)" required> <br><br>
+
+			 	<label for="dataNascimento">Data de Nascimento</label>
+			 	<input type="date" name="dataNascimento" id="dataNascimento" required> <br><br>
+
+			 	<label for="endereco">Endereço</label> <br>
+		 		<textarea name="endereco" id="endereco" rows="3" maxlength="255" required></textarea> <br><br>
+
+					<label for="estado">Estado: </label>
+                    <select name="estado" id="estado" required>
+                        <option value="" selected="selected" disabled="disabled">Selecione uma opção</option>
+                    </select><br><br>
+
+			 	<fieldset id="genero" >
+			 		<legend>Gênero:</legend> <br>
+				 	<input required type="radio" name="sexo" id="sexo1" value="1"> <label for="sexo1" >Masculino</label>
+				 	<input type="radio" name="sexo" id="sexo2" value="2"> <label for="sexo2" >Feminino</label>
+				 	<input type="radio" name="sexo" id="sexo3" value="3"> <label for="sexo3" >Outro</label>
+			 	</fieldset><br>
+
+			 	<label for="email">E-mail</label>
+			 	<input type="text" name="email" id="email" maxlength="200" required> <br><br>
+
+				<fieldset >
+			 		<legend>Preferências:</legend> <br>
+				 	<input type="checkbox" id="esportes" name="esportes" value="esportes">
+					<label for="esportes"> Esportes</label><br>
+					<input type="checkbox" id="cinema" name="cinema" value="cinema">
+					<label for="cinema"> Cinema</label><br>
+					<input type="checkbox" id="teatro" name="teatro" value="teatro">
+					<label for="teatro"> Teatro</label><br>
+					<input type="checkbox" id="musica" name="musica" value="musica">
+					<label for="musica"> Música</label><br>
+					<input type="checkbox" id="educacao" name="educacao" value="educacao">
+					<label for="educacao"> Educação</label><br>
+					<input type="checkbox" id="cultura" name="cultura" value="cultura">
+					<label for="cultura"> Cultura</label><br>
+					<input type="checkbox" id="tecnologia" name="tecnologia" value="tecnologia">
+					<label for="tecnologia"> Tecnologia</label><br>
+			 	</fieldset><br>
+
+			 	<input class="crud-btn" type="submit" name="enviar" value="Enviar">
+			 	<input class="crud-btn" type="reset" name="limpar" value="Limpar">
+			</form>
+
+			<br>
+			<br>
+			<br>
+		</div>
+
+	</div>
+	
+	<script src="functions.js"></script>
+</body>
+</html>
