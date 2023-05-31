@@ -1,7 +1,9 @@
 const form = document.getElementById('clienteForm')
 const erros = document.getElementById('erros')
 const agene = document.getElementById('sexo3')
-const genero = document.getElementById('genero')
+const masc = document.getElementById('sexo1')
+const fem = document.getElementById('sexo2')
+const genero = document.getElementById('outroGenero')
 
 
 form.addEventListener('submit', function eventoForm(e){
@@ -16,7 +18,7 @@ form.addEventListener('submit', function eventoForm(e){
       e.target.submit()
     } else {
       if (!validacao.valida() && !validaEmail(email) && !validaCheckboxes()) { ///ABC ERRADOS
-        txtError = '• CPF Inválido, Email Inválido e Ao menos uma preferência deve ser selecionada!'
+        txtError = '• CPF Inválido, Email Inválido e ao menos uma preferência deve ser selecionada!'
     } else {
         if (!validacao.valida()) { //A ERRADO
             txtError = '• CPF Inválido!'
@@ -31,10 +33,10 @@ form.addEventListener('submit', function eventoForm(e){
             txtError = '• CPF e Email Inválidos!'
         }
         if(!validacao.valida() && !validaCheckboxes()){ //AC ERRADOS
-            txtError = '• CPF Inválido e Ao menos uma preferência deve ser selecionada!'
+            txtError = '• CPF Inválido e ao menos uma preferência deve ser selecionada!'
         }
         if(!validaEmail(email) && !validaCheckboxes()){ //BC ERRADOS
-            txtError = '• Email Inválido e Ao menos uma preferência deve ser selecionada!'
+            txtError = '• Email Inválido e ao menos uma preferência deve ser selecionada!'
         }
     }
   msgErro.textContent = txtError
@@ -67,18 +69,29 @@ agene.addEventListener('click', function eventoAgene(e){
     }
 })
 
+masc.addEventListener('click', function apagaBoxM(e){
+    genero.innerHTML = ''
+    criarAgene = false
+})
+
+fem.addEventListener('click', function apagaBoxF(e){
+    genero.innerHTML = ''
+    criarAgene = false
+})
+
 function sexo3(){
     const outro = document.createElement('input')
+    const digite = document.createElement('p')
+    digite.textContent = "Digite seu Gênero: "
     outro.name = "sexoAgene"
     outro.id = "sexoAgene"
     outro.type = "text"
     outro.required = true
-    outro.style.width = "40%"
+    outro.style.width = "90%"
     outro.maxLength = "30"
-    console.log(outro)
     criarAgene = true
+    genero.append(digite)
     genero.append(outro)
-
 }
 
 function onlyNumberKey(evt) {        
@@ -157,7 +170,7 @@ function popularEstados() {
 
           for (var prop in regioes) {
               regioes[prop].sort();
-              $("#estado").append("<optgroup label=\""+prop+"\" id=\""+prop+"\"></optgroup>");
+              $("#estado").append("<optgroup label=\""+prop+"\" id=\""+prop+"\" class=\"groupOption\"></optgroup>");
               for (var prop2 in regioes[prop]) {
                   $("#estado #"+prop).append("<option value=\""+regioes[prop][prop2].substring(0,2)+"\">"+regioes[prop][prop2].slice(3)+"</option>");
               }

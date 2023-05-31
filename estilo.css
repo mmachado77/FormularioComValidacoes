@@ -302,6 +302,22 @@ p {
 
 }
 
+#clienteForm input:not(.crud-btn), textarea, select{
+	border: solid 1px white;
+	font-family: Verdana, sans-serif;
+	background-color: inherit;
+	color: white;
+}
+
+#estado option{
+	background-color: #1C1C1C;
+}
+
+.groupOption {
+	color: white;
+	background-color: #1C1C1C;
+}
+
 #clienteForm fieldset {
 	border: 2px solid #f00;
 }
@@ -310,6 +326,13 @@ p {
 	color: #F00;
 	left: 0;
 	padding: 3% 0;
+}
+
+#outroGenero{
+	display: flex;
+	float: left;
+	margin: 0;
+	padding: 4% 0;
 }
 
 
