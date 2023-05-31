@@ -9,3 +9,7 @@ Aqui estão os requisitos, todos preenchidos:
 - O e-mail deve ser validado como um formato válido.
 - Todos os campos são de preenchimento obrigatório e, ao menos uma preferência deve ser selecionada.
 Os estilos do formulário foram feitos de acordo com os requisitos dados pelos professor, portanto, não há escolha artística para o layout do formulário.
+
+--> Correção 01:
+- Foi observado um bug onde ao clickar em "outro", nos campos de gênero, o espaço para digitação aparecia corretamente. Porém, ao mudar de ideia e selecionar "Masculino" ou "Feminino", o campo não desaparecia: CORRIGIDO
+- Foram feitas alterações no .CSS
